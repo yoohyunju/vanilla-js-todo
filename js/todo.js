@@ -28,7 +28,6 @@ function paintToDo(newTodo) {
 
   li.appendChild(span);
   li.appendChild(button);
-  span.innerText = newTodo.text;
   toDoList.appendChild(li);
 }
 
@@ -51,7 +50,7 @@ toDoForm.addEventListener("submit", handleToDoSubmit);
 
 const savedToDos = localStorage.getItem(TODOS_KEY);
 
-if (saveToDos !== null) {
+if (savedToDos !== null) {
   const parsedToDos = JSON.parse(savedToDos); // parse해서 배열의 형태로 저장됨
   toDos = parsedToDos;
   parsedToDos.forEach(paintToDo);
