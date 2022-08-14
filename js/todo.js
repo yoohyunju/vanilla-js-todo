@@ -12,7 +12,6 @@ function saveToDos() {
 
 function deleteToDo(e) {
   const li = e.target.parentElement;
-  console.log(li)
   li.remove();
   toDos = toDos.filter((toDo) => toDo.id !== parseInt(li.id)); // type 중요!
   saveToDos();
@@ -22,6 +21,7 @@ function paintToDo(newTodo) {
   const li = document.createElement("li");
   li.id = newTodo.id;
   const span = document.createElement("span");
+  span.innerText = newTodo.text;
   const button = document.createElement("button");
   button.innerText = "❌";
   button.addEventListener("click", deleteToDo);
